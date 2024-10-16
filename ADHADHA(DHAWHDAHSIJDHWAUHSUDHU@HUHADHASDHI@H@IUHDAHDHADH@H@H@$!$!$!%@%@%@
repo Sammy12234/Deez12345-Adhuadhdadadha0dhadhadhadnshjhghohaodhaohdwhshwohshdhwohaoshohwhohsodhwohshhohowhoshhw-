@@ -1,0 +1,1539 @@
+----- GUI.
+
+local UI = Instance.new("ScreenGui")
+UI.ResetOnSpawn = false
+
+-------------- GLOBAL FRAME.
+
+local Global = Instance.new("Frame")
+Global.Size = UDim2.new(0.317, 0,0.658, 0)
+Global.Position = UDim2.new(0.38, 0,0.179, 0)
+Global.BackgroundTransparency = 1
+Global.Draggable = true
+Global.Selectable = true
+Global.Active = true
+
+
+---------------------------------------------------------------- SELECTBUTTON
+
+local SettingsButtonSelect = Instance.new("TextButton")
+SettingsButtonSelect.Name = "SettingsButtonSelect"
+SettingsButtonSelect.FontFace = Font.new(
+	"rbxasset://fonts/families/Sarpanch.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+SettingsButtonSelect.Text = "Settings"
+SettingsButtonSelect.TextColor3 = Color3.fromRGB(250, 250, 250)
+SettingsButtonSelect.TextScaled = true
+SettingsButtonSelect.TextSize = 14
+SettingsButtonSelect.TextWrapped = true
+SettingsButtonSelect.AutoButtonColor = false
+SettingsButtonSelect.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+SettingsButtonSelect.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SettingsButtonSelect.BorderSizePixel = 0
+SettingsButtonSelect.Position = UDim2.new(0.29, 0, 0.0255, 0)
+SettingsButtonSelect.Size = UDim2.new(0.289, 0, 0.0801, 0)
+SettingsButtonSelect.ZIndex = 4
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+UICorner.CornerRadius = UDim.new(0, 3)
+UICorner.Parent = SettingsButtonSelect
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Name = "UIStroke"
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Thickness = 2.9
+
+local UIGradient = Instance.new("UIGradient")
+UIGradient.Name = "UIGradient"
+UIGradient.Rotation = 90
+UIGradient.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 0),
+	NumberSequenceKeypoint.new(0.652, 0.119),
+	NumberSequenceKeypoint.new(0.805, 0.931),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient.Parent = UIStroke
+
+UIStroke.Parent = SettingsButtonSelect
+
+local UIGradient1 = Instance.new("UIGradient")
+UIGradient1.Name = "UIGradient"
+UIGradient1.Color = ColorSequence.new({
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+	ColorSequenceKeypoint.new(0.979, Color3.fromRGB(243, 64, 10)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(126, 126, 126)),
+})
+UIGradient1.Rotation = -90
+UIGradient1.Parent = SettingsButtonSelect
+
+local UIStroke1 = Instance.new("UIStroke")
+UIStroke1.Name = "UIStroke"
+UIStroke1.Parent = SettingsButtonSelect
+
+SettingsButtonSelect.Parent = Global
+
+--------------------------------------------------- MAINBUTTON SELECT
+
+local MainButtonSelect = Instance.new("TextButton")
+MainButtonSelect.Name = "MainButtonSelect"
+MainButtonSelect.FontFace = Font.new(
+	"rbxasset://fonts/families/Sarpanch.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+MainButtonSelect.Text = "Main"
+MainButtonSelect.TextColor3 = Color3.fromRGB(43, 13, 236)
+MainButtonSelect.TextScaled = true
+MainButtonSelect.TextSize = 14
+MainButtonSelect.TextWrapped = true
+MainButtonSelect.AutoButtonColor = false
+MainButtonSelect.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+MainButtonSelect.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainButtonSelect.BorderSizePixel = 0
+MainButtonSelect.Position = UDim2.new(0.0286, 0, 0.0255, 0)
+MainButtonSelect.Size = UDim2.new(0.289, 0, 0.0801, 0)
+MainButtonSelect.ZIndex = 3
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+UICorner.Parent = MainButtonSelect
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Name = "UIStroke"
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Thickness = 2.9
+
+local UIGradient = Instance.new("UIGradient")
+UIGradient.Name = "UIGradient"
+UIGradient.Rotation = 90
+UIGradient.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 0),
+	NumberSequenceKeypoint.new(0.778, 0),
+	NumberSequenceKeypoint.new(0.83, 0.951),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient.Parent = UIStroke
+
+UIStroke.Parent = MainButtonSelect
+
+local UIGradient1 = Instance.new("UIGradient")
+UIGradient1.Name = "UIGradient"
+UIGradient1.Color = ColorSequence.new({
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+	ColorSequenceKeypoint.new(0.979, Color3.fromRGB(243, 64, 10)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(126, 126, 126)),
+})
+UIGradient1.Rotation = -90
+UIGradient1.Parent = MainButtonSelect
+
+local UIStroke1 = Instance.new("UIStroke")
+UIStroke1.Name = "UIStroke"
+UIStroke1.Parent = MainButtonSelect
+
+MainButtonSelect.Parent = Global
+
+--------------------------------------------------- MAIN FRAME
+
+local Main = Instance.new("Frame")
+Main.Name = "Main"
+Main.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.0286, 0, 0.0775, 0)
+Main.Size = UDim2.new(0.934, 0, 0.91, 0)
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = Main
+
+local LeftGroup = Instance.new("Frame")
+LeftGroup.Name = "LeftGroup"
+LeftGroup.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LeftGroup.BackgroundTransparency = 1
+LeftGroup.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LeftGroup.BorderSizePixel = 0
+LeftGroup.ClipsDescendants = true
+LeftGroup.Position = UDim2.new(0, 0, 0.0172, 0)
+LeftGroup.Size = UDim2.new(0.5, 0, 0.983, 0)
+
+local KirasdnTITLE = Instance.new("TextLabel")
+KirasdnTITLE.Name = "KirasdnTITLE"
+KirasdnTITLE.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+KirasdnTITLE.Text = "Kiras ;"
+KirasdnTITLE.TextColor3 = Color3.fromRGB(0, 0, 0)
+KirasdnTITLE.TextScaled = true
+KirasdnTITLE.TextSize = 14
+KirasdnTITLE.TextWrapped = true
+KirasdnTITLE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KirasdnTITLE.BackgroundTransparency = 1
+KirasdnTITLE.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KirasdnTITLE.BorderSizePixel = 0
+KirasdnTITLE.Position = UDim2.new(0.0463, 0, 0.0575, 0)
+KirasdnTITLE.Size = UDim2.new(0.961, 0, 0.06, 0)
+KirasdnTITLE.Parent = LeftGroup
+
+local KirasDN = Instance.new("TextLabel")
+KirasDN.Name = "KirasDN"
+KirasDN.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+KirasDN.Text = ""
+KirasDN.TextColor3 = Color3.fromRGB(202, 5, 5)
+KirasDN.TextScaled = true
+KirasDN.TextSize = 14
+KirasDN.TextWrapped = true
+KirasDN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KirasDN.BackgroundTransparency = 1
+KirasDN.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KirasDN.BorderSizePixel = 0
+KirasDN.Position = UDim2.new(0.0463, 0, 0.13, 0)
+KirasDN.Size = UDim2.new(0.926, 0, 0.147, 0)
+KirasDN.Parent = LeftGroup
+
+local KirasIDTITLE = Instance.new("TextLabel")
+KirasIDTITLE.Name = "KirasIDTITLE"
+KirasIDTITLE.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+KirasIDTITLE.Text = "HasPickedID ;"
+KirasIDTITLE.TextColor3 = Color3.fromRGB(0, 0, 0)
+KirasIDTITLE.TextScaled = true
+KirasIDTITLE.TextSize = 14
+KirasIDTITLE.TextWrapped = true
+KirasIDTITLE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KirasIDTITLE.BackgroundTransparency = 1
+KirasIDTITLE.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KirasIDTITLE.BorderSizePixel = 0
+KirasIDTITLE.Position = UDim2.new(0.046, 0,0.333, 0)
+KirasIDTITLE.Size = UDim2.new(0.961, 0, 0.06, 0)
+KirasIDTITLE.Parent = LeftGroup
+
+local HasPickedID = Instance.new("TextLabel")
+HasPickedID.Name = "HasPickedID"
+HasPickedID.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+HasPickedID.Text = ""
+HasPickedID.TextColor3 = Color3.fromRGB(202, 5, 5)
+HasPickedID.TextScaled = true
+HasPickedID.TextSize = 14
+HasPickedID.TextWrapped = true
+HasPickedID.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HasPickedID.BackgroundTransparency = 1
+HasPickedID.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HasPickedID.BorderSizePixel = 0
+HasPickedID.Position = UDim2.new(0.047, 0,0.393, 0)
+HasPickedID.Size = UDim2.new(0.926, 0,0.098, 0)
+HasPickedID.Parent = LeftGroup
+
+local Clear = Instance.new("TextButton")
+Clear.Name = "Clear"
+Clear.FontFace = Font.new(
+	"rbxasset://fonts/families/SourceSansPro.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+Clear.Text = "CLEAR"
+Clear.TextColor3 = Color3.fromRGB(216, 216, 216)
+Clear.TextScaled = true
+Clear.TextSize = 14
+Clear.TextWrapped = true
+Clear.AutoButtonColor = false
+Clear.BackgroundColor3 = Color3.fromRGB(44, 25, 25)
+Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Clear.BorderSizePixel = 0
+Clear.Position = UDim2.new(0.15, 0, 0.822, 0)
+Clear.Size = UDim2.new(0, 166, 0, 22)
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Name = "UIStroke"
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Parent = Clear
+
+Clear.Parent = LeftGroup
+
+local GoodSideTITLE = Instance.new("TextLabel")
+GoodSideTITLE.Name = "GoodSideTITLE"
+GoodSideTITLE.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+GoodSideTITLE.Text = "L/Mello/Near ;"
+GoodSideTITLE.TextColor3 = Color3.fromRGB(0, 0, 0)
+GoodSideTITLE.TextScaled = true
+GoodSideTITLE.TextSize = 14
+GoodSideTITLE.TextWrapped = true
+GoodSideTITLE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GoodSideTITLE.BackgroundTransparency = 1
+GoodSideTITLE.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GoodSideTITLE.BorderSizePixel = 0
+GoodSideTITLE.Position = UDim2.new(0.044, 0,0.539, 0)
+GoodSideTITLE.Size = UDim2.new(0.961, 0, 0.06, 0)
+
+GoodSideTITLE.Parent = LeftGroup
+
+
+local GoodSide = Instance.new("TextLabel")
+GoodSide.Name = "GoodSide"
+GoodSide.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+GoodSide.Text = ""
+GoodSide.TextColor3 = Color3.fromRGB(23, 0, 193)
+GoodSide.TextScaled = true
+GoodSide.TextSize = 14
+GoodSide.TextWrapped = true
+GoodSide.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GoodSide.BackgroundTransparency = 1
+GoodSide.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GoodSide.BorderSizePixel = 0
+GoodSide.Position = UDim2.new(0.067, 0,0.615, 0)
+GoodSide.Size = UDim2.new(0.864, 0,0.085, 0)
+
+GoodSide.Parent = LeftGroup
+
+LeftGroup.Parent = Main
+
+local RightGroup = Instance.new("Frame")
+RightGroup.Name = "RightGroup"
+RightGroup.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+RightGroup.BackgroundTransparency = 1
+RightGroup.BorderColor3 = Color3.fromRGB(0, 0, 0)
+RightGroup.BorderSizePixel = 0
+RightGroup.ClipsDescendants = true
+RightGroup.Position = UDim2.new(0.5, 0, 0.0172, 0)
+RightGroup.Size = UDim2.new(0.5, 0, 0.983, 0)
+
+local TPTOYOURID = Instance.new("TextButton")
+TPTOYOURID.Name = "TPTOYOURID"
+TPTOYOURID.FontFace = Font.new(
+	"rbxasset://fonts/families/Nunito.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Italic
+)
+TPTOYOURID.Text = "TP TO YOUR ID"
+TPTOYOURID.TextColor3 = Color3.fromRGB(27, 27, 27)
+TPTOYOURID.TextScaled = true
+TPTOYOURID.TextSize = 14
+TPTOYOURID.TextWrapped = true
+TPTOYOURID.AutoButtonColor = false
+TPTOYOURID.BackgroundColor3 = Color3.fromRGB(79, 33, 33)
+TPTOYOURID.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TPTOYOURID.BorderSizePixel = 0
+TPTOYOURID.Position = UDim2.new(0.0741, 0, 0.0575, 0)
+TPTOYOURID.Size = UDim2.new(0.885, 0, 0.0625, 0)
+
+local UICorner1 = Instance.new("UICorner")
+UICorner1.Name = "UICorner"
+UICorner1.CornerRadius = UDim.new(0, 2)
+UICorner1.Parent = TPTOYOURID
+
+local UIStroke1 = Instance.new("UIStroke")
+UIStroke1.Name = "UIStroke"
+UIStroke1.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke1.Color = Color3.fromRGB(48, 7, 255)
+UIStroke1.Thickness = 0.6
+
+local UIGradient = Instance.new("UIGradient")
+UIGradient.Name = "UIGradient"
+UIGradient.Rotation = 90
+UIGradient.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 0),
+	NumberSequenceKeypoint.new(0.84, 0.361),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient.Parent = UIStroke1
+
+UIStroke1.Parent = TPTOYOURID
+
+TPTOYOURID.Parent = RightGroup
+
+local TPTOSOMEONESID = Instance.new("TextBox")
+TPTOSOMEONESID.Name = "TPTOSOMEONESID"
+TPTOSOMEONESID.CursorPosition = -1
+TPTOSOMEONESID.FontFace = Font.new(
+	"rbxasset://fonts/families/Nunito.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Italic
+)
+TPTOSOMEONESID.PlaceholderColor3 = Color3.fromRGB(58, 18, 65)
+TPTOSOMEONESID.PlaceholderText = "Command Bar"
+TPTOSOMEONESID.Text = ""
+TPTOSOMEONESID.TextColor3 = Color3.fromRGB(0, 0, 0)
+TPTOSOMEONESID.TextScaled = true
+TPTOSOMEONESID.TextSize = 14
+TPTOSOMEONESID.TextWrapped = true
+TPTOSOMEONESID.BackgroundColor3 = Color3.fromRGB(79, 33, 33)
+TPTOSOMEONESID.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TPTOSOMEONESID.BorderSizePixel = 0
+TPTOSOMEONESID.Position = UDim2.new(0.069, 0, 0.135, 0)
+TPTOSOMEONESID.Size = UDim2.new(0.885, 0, 0.062, 0)
+
+local UICorner2 = Instance.new("UICorner")
+UICorner2.Name = "UICorner"
+UICorner2.CornerRadius = UDim.new(0, 2)
+UICorner2.Parent = TPTOSOMEONESID
+
+local UIStroke2 = Instance.new("UIStroke")
+UIStroke2.Name = "UIStroke"
+UIStroke2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke2.Color = Color3.fromRGB(48, 7, 255)
+UIStroke2.Thickness = 0.6
+
+local UIGradient1 = Instance.new("UIGradient")
+UIGradient1.Name = "UIGradient"
+UIGradient1.Rotation = -90
+UIGradient1.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 0),
+	NumberSequenceKeypoint.new(0.84, 0.361),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient1.Parent = UIStroke2
+
+UIStroke2.Parent = TPTOSOMEONESID
+
+TPTOSOMEONESID.Parent = RightGroup
+
+local MisasGamePrompt = Instance.new("TextButton")
+MisasGamePrompt.Name = "MisasGamePrompt"
+MisasGamePrompt.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Italic
+)
+MisasGamePrompt.Text = "Get Names For Misa's Game"
+MisasGamePrompt.TextColor3 = Color3.fromRGB(78, 48, 102)
+MisasGamePrompt.TextScaled = true
+MisasGamePrompt.TextSize = 14
+MisasGamePrompt.TextWrapped = true
+MisasGamePrompt.AutoButtonColor = false
+MisasGamePrompt.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MisasGamePrompt.BackgroundTransparency = 1
+MisasGamePrompt.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MisasGamePrompt.BorderSizePixel = 0
+MisasGamePrompt.Position = UDim2.new(0.0638, 0, 0.335, 0)
+MisasGamePrompt.Size = UDim2.new(0.916, 0, 0.06, 0)
+
+local UICorner3 = Instance.new("UICorner")
+UICorner3.Name = "UICorner"
+UICorner3.CornerRadius = UDim.new(0, 3)
+UICorner3.Parent = MisasGamePrompt
+
+MisasGamePrompt.Parent = RightGroup
+
+local MisasGameNames = Instance.new("TextLabel")
+MisasGameNames.Name = "MisasGameNames"
+MisasGameNames.FontFace = Font.new(
+	"rbxasset://fonts/families/Nunito.json",
+	Enum.FontWeight.Regular,
+	Enum.FontStyle.Italic
+)
+MisasGameNames.Text = ""
+MisasGameNames.TextColor3 = Color3.fromRGB(136, 0, 0)
+MisasGameNames.TextScaled = true
+MisasGameNames.TextSize = 14
+MisasGameNames.TextWrapped = true
+MisasGameNames.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MisasGameNames.BackgroundTransparency = 1
+MisasGameNames.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MisasGameNames.BorderSizePixel = 0
+MisasGameNames.Position = UDim2.new(0.0639, 0, 0.4, 0)
+MisasGameNames.Size = UDim2.new(0.89, 0, 0.317, 0)
+
+local UIStroke3 = Instance.new("UIStroke")
+UIStroke3.Name = "UIStroke"
+UIStroke3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke3.Color = Color3.fromRGB(255, 16, 243)
+
+local UIGradient2 = Instance.new("UIGradient")
+UIGradient2.Name = "UIGradient"
+UIGradient2.Rotation = 90
+UIGradient2.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 1),
+	NumberSequenceKeypoint.new(0.101, 1),
+	NumberSequenceKeypoint.new(0.399, 0),
+	NumberSequenceKeypoint.new(0.602, 0),
+	NumberSequenceKeypoint.new(0.899, 0.995),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient2.Parent = UIStroke3
+
+UIStroke3.Parent = MisasGameNames
+
+local UICorner4 = Instance.new("UICorner")
+UICorner4.Name = "UICorner"
+UICorner4.CornerRadius = UDim.new(0, 1)
+UICorner4.Parent = MisasGameNames
+
+MisasGameNames.Parent = RightGroup
+
+local NoclipButton = Instance.new("TextButton")
+NoclipButton.Name = "NoclipButton"
+NoclipButton.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+NoclipButton.Text = "NOCLIP"
+NoclipButton.TextColor3 = Color3.fromRGB(94, 94, 94)
+NoclipButton.TextScaled = true
+NoclipButton.TextSize = 14
+NoclipButton.TextWrapped = true
+NoclipButton.AutoButtonColor = false
+NoclipButton.BackgroundColor3 = Color3.fromRGB(16, 3, 44)
+NoclipButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NoclipButton.BorderSizePixel = 0
+NoclipButton.Position = UDim2.new(0.11, 0, 0.737, 0)
+NoclipButton.Size = UDim2.new(0, 165, 0, 20)
+NoclipButton.Parent = RightGroup
+
+local TPtorandomsearchlocation = Instance.new("TextButton")
+TPtorandomsearchlocation.Name = "TPtorandomsearchlocation"
+TPtorandomsearchlocation.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+TPtorandomsearchlocation.Text = "AUTOSEARCHDEATHNOTE"
+TPtorandomsearchlocation.TextColor3 = Color3.fromRGB(94, 94, 94)
+TPtorandomsearchlocation.TextScaled = true
+TPtorandomsearchlocation.TextSize = 14
+TPtorandomsearchlocation.TextWrapped = true
+TPtorandomsearchlocation.AutoButtonColor = false
+TPtorandomsearchlocation.BackgroundColor3 = Color3.fromRGB(16, 3, 44)
+TPtorandomsearchlocation.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TPtorandomsearchlocation.BorderSizePixel = 0
+TPtorandomsearchlocation.Position = UDim2.new(0.11, 0, 0.825, 0)
+TPtorandomsearchlocation.Size = UDim2.new(0, 165, 0, 20)
+TPtorandomsearchlocation.Parent = RightGroup
+
+RightGroup.Parent = Main
+
+local Separation = Instance.new("Frame")
+Separation.Name = "Separation"
+Separation.BackgroundColor3 = Color3.fromRGB(49, 0, 1)
+Separation.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Separation.BorderSizePixel = 0
+Separation.Position = UDim2.new(0.504, 0, 0.0319, 0)
+Separation.Size = UDim2.new(0.0075, 0, 0.968, 0)
+
+local UIGradient3 = Instance.new("UIGradient")
+UIGradient3.Name = "UIGradient"
+UIGradient3.Rotation = 90
+UIGradient3.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 1),
+	NumberSequenceKeypoint.new(0.395, 0.399),
+	NumberSequenceKeypoint.new(0.603, 0.383),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient3.Parent = Separation
+
+local UICorner5 = Instance.new("UICorner")
+UICorner5.Name = "UICorner"
+UICorner5.CornerRadius = UDim.new(0.4, 0)
+UICorner5.Parent = Separation
+
+Separation.Parent = Main
+
+local UIStroke4 = Instance.new("UIStroke")
+UIStroke4.Name = "UIStroke"
+UIStroke4.Thickness = 2.6
+UIStroke4.Parent = Main
+
+local Separation1 = Instance.new("Frame")
+Separation1.Name = "Separation"
+Separation1.BackgroundColor3 = Color3.fromRGB(49, 0, 1)
+Separation1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Separation1.BorderSizePixel = 0
+Separation1.Position = UDim2.new(0.757, 0, 0.1, 0)
+Separation1.Rotation = 90
+Separation1.Size = UDim2.new(0.0101, 0, 0.4, 0)
+
+local UIGradient4 = Instance.new("UIGradient")
+UIGradient4.Name = "UIGradient"
+UIGradient4.Rotation = 90
+UIGradient4.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 1),
+	NumberSequenceKeypoint.new(0.395, 0.399),
+	NumberSequenceKeypoint.new(0.603, 0.383),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient4.Parent = Separation1
+
+local UICorner6 = Instance.new("UICorner")
+UICorner6.Name = "UICorner"
+UICorner6.CornerRadius = UDim.new(0.4, 0)
+UICorner6.Parent = Separation1
+
+Separation1.Parent = Main
+
+local Separation2 = Instance.new("Frame")
+Separation2.Name = "Separation"
+Separation2.BackgroundColor3 = Color3.fromRGB(49, 0, 1)
+Separation2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Separation2.BorderSizePixel = 0
+Separation2.Position = UDim2.new(0.245, 0, 0.1, 0)
+Separation2.Rotation = 90
+Separation2.Size = UDim2.new(0.0101, 0, 0.4, 0)
+
+local UIGradient5 = Instance.new("UIGradient")
+UIGradient5.Name = "UIGradient"
+UIGradient5.Rotation = 90
+UIGradient5.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 1),
+	NumberSequenceKeypoint.new(0.395, 0.399),
+	NumberSequenceKeypoint.new(0.603, 0.383),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient5.Parent = Separation2
+
+local UICorner7 = Instance.new("UICorner")
+UICorner7.Name = "UICorner"
+UICorner7.CornerRadius = UDim.new(0.4, 0)
+UICorner7.Parent = Separation2
+
+Separation2.Parent = Main
+
+local Separation3 = Instance.new("Frame")
+Separation3.Name = "Separation"
+Separation3.BackgroundColor3 = Color3.fromRGB(49, 0, 1)
+Separation3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Separation3.BorderSizePixel = 0
+Separation3.Position = UDim2.new(0.757, 0, 0.51, 0)
+Separation3.Rotation = 90
+Separation3.Size = UDim2.new(0.0101, 0, 0.4, 0)
+
+local UIGradient6 = Instance.new("UIGradient")
+UIGradient6.Name = "UIGradient"
+UIGradient6.Rotation = 90
+UIGradient6.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 1),
+	NumberSequenceKeypoint.new(0.395, 0.399),
+	NumberSequenceKeypoint.new(0.603, 0.383),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient6.Parent = Separation3
+
+local UICorner8 = Instance.new("UICorner")
+UICorner8.Name = "UICorner"
+UICorner8.CornerRadius = UDim.new(0.4, 0)
+UICorner8.Parent = Separation3
+
+Separation3.Parent = Main
+
+
+
+local Separation4 = Instance.new("Frame")
+Separation4.Name = "Separation"
+Separation4.BackgroundColor3 = Color3.fromRGB(49, 0, 1)
+Separation4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Separation4.BorderSizePixel = 0
+Separation4.Position = UDim2.new(0.245, 0,0.36, 0)
+Separation4.Rotation = 90
+Separation4.Size = UDim2.new(0.0101, 0, 0.4, 0)
+
+local UIGradient6 = Instance.new("UIGradient")
+UIGradient6.Name = "UIGradient"
+UIGradient6.Rotation = 90
+UIGradient6.Transparency = NumberSequence.new({
+	NumberSequenceKeypoint.new(0, 1),
+	NumberSequenceKeypoint.new(0.395, 0.399),
+	NumberSequenceKeypoint.new(0.603, 0.383),
+	NumberSequenceKeypoint.new(1, 1),
+})
+UIGradient6.Parent = Separation4
+
+local UICorner8 = Instance.new("UICorner")
+UICorner8.Name = "UICorner"
+UICorner8.CornerRadius = UDim.new(0.4, 0)
+UICorner8.Parent = Separation4
+
+Separation3.Parent = Main
+
+local Start = Instance.new("TextButton")
+Start.Name = "Start"
+Start.FontFace = Font.new(
+	"rbxasset://fonts/families/SourceSansPro.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+Start.Text = "START"
+Start.TextColor3 = Color3.fromRGB(203, 196, 196)
+Start.TextScaled = true
+Start.TextSize = 14
+Start.TextWrapped = true
+Start.AutoButtonColor = false
+Start.BackgroundColor3 = Color3.fromRGB(44, 25, 25)
+Start.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Start.BorderSizePixel = 0
+Start.Position = UDim2.new(0.15, 0, 0.735, 0) 
+Start.Size = UDim2.new(0, 166, 0, 22)
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Name = "UIStroke"
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Thickness = 1.3
+UIStroke.Parent = Start
+
+Start.Parent = LeftGroup
+
+local KiraDesc = Instance.new("TextLabel")
+KiraDesc.Name = "KiraDesc"
+KiraDesc.FontFace = Font.new(
+	"rbxasset://fonts/families/SourceSansPro.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Italic
+)
+KiraDesc.Text = "100% accurate : checks who had death note out"
+KiraDesc.TextColor3 = Color3.fromRGB(0, 0, 0)
+KiraDesc.TextScaled = true
+KiraDesc.TextSize = 14
+KiraDesc.TextWrapped = true
+KiraDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KiraDesc.BackgroundTransparency = 1
+KiraDesc.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KiraDesc.BorderSizePixel = 0
+KiraDesc.Position = UDim2.new(-0.568, 0, 0.149, 0)
+KiraDesc.Size = UDim2.new(0.535, 0, 0.124, 0)
+KiraDesc.Visible = false
+
+KiraDesc.Parent = Main
+
+local PickedIdsDesc = Instance.new("TextLabel")
+PickedIdsDesc.Name = "PickedIdsDesc"
+PickedIdsDesc.FontFace = Font.new(
+	"rbxasset://fonts/families/SourceSansPro.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Italic
+)
+PickedIdsDesc.Text = "Gets closest person to an Id when it gets picked"
+PickedIdsDesc.TextColor3 = Color3.fromRGB(0, 0, 0)
+PickedIdsDesc.TextScaled = true
+PickedIdsDesc.TextSize = 14
+PickedIdsDesc.TextWrapped = true
+PickedIdsDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PickedIdsDesc.BackgroundTransparency = 1
+PickedIdsDesc.BorderColor3 = Color3.fromRGB(0, 0, 0)
+PickedIdsDesc.BorderSizePixel = 0
+PickedIdsDesc.Position = UDim2.new(-0.568, 0, 0.403, 0)
+PickedIdsDesc.Size = UDim2.new(0.535, 0, 0.124, 0)
+PickedIdsDesc.Visible = false
+
+PickedIdsDesc.Parent = Main
+
+local LDesc = Instance.new("TextLabel")
+LDesc.Name = "LDesc"
+LDesc.FontFace = Font.new(
+	"rbxasset://fonts/families/SourceSansPro.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Italic
+)
+LDesc.Text = "Based on players's L chances. Updates itself to narrow stuff down (Least accurate detection)"
+LDesc.TextColor3 = Color3.fromRGB(0, 0, 0)
+LDesc.TextScaled = true
+LDesc.TextSize = 14
+LDesc.TextWrapped = true
+LDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LDesc.BackgroundTransparency = 1
+LDesc.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LDesc.BorderSizePixel = 0
+LDesc.Position = UDim2.new(-0.568, 0, 0.587, 0)
+LDesc.Size = UDim2.new(0.535, 0, 0.124, 0)
+LDesc.Visible = false
+
+
+LDesc.Parent = Main
+
+Main.Parent = Global
+
+
+------------------------------------------------------------ SETTINGS FRAME
+
+local Settings = Instance.new("Frame")
+Settings.Name = "Settings"
+Settings.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Settings.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Settings.BorderSizePixel = 0
+Settings.Position = UDim2.new(0.0286, 0, 0.0775, 0)
+Settings.Size = UDim2.new(0.934, 0, 0.91, 0)
+Settings.Visible = false
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = Settings
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Name = "UIStroke"
+UIStroke.Thickness = 2.6
+UIStroke.Parent = Settings
+
+local UITOGGLEKEYBINDTITLE = Instance.new("TextLabel")
+UITOGGLEKEYBINDTITLE.Name = "UITOGGLEKEYBINDTITLE"
+UITOGGLEKEYBINDTITLE.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+UITOGGLEKEYBINDTITLE.Text = "Toggle UI Keybind :"
+UITOGGLEKEYBINDTITLE.TextColor3 = Color3.fromRGB(0, 0, 0)
+UITOGGLEKEYBINDTITLE.TextScaled = true
+UITOGGLEKEYBINDTITLE.TextSize = 14
+UITOGGLEKEYBINDTITLE.TextWrapped = true
+UITOGGLEKEYBINDTITLE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UITOGGLEKEYBINDTITLE.BackgroundTransparency = 1
+UITOGGLEKEYBINDTITLE.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UITOGGLEKEYBINDTITLE.BorderSizePixel = 0
+UITOGGLEKEYBINDTITLE.Position = UDim2.new(0.0281, 0, 0.0783, 0)
+UITOGGLEKEYBINDTITLE.Size = UDim2.new(0.517, 0, 0.0892, 0)
+UITOGGLEKEYBINDTITLE.Parent = Settings
+
+local TextBoxKeybind = Instance.new("TextBox")
+TextBoxKeybind.Name = "TextBox"
+TextBoxKeybind.CursorPosition = -1
+TextBoxKeybind.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json")
+TextBoxKeybind.PlaceholderText = "???"
+TextBoxKeybind.Text = ""
+TextBoxKeybind.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBoxKeybind.TextScaled = true
+TextBoxKeybind.TextSize = 14
+TextBoxKeybind.TextWrapped = true
+TextBoxKeybind.BackgroundColor3 = Color3.fromRGB(53, 77, 70)
+TextBoxKeybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBoxKeybind.BorderSizePixel = 0
+TextBoxKeybind.Position = UDim2.new(0.582, 0, 0.0735, 0)
+TextBoxKeybind.Size = UDim2.new(0, 74, 0, 38)
+
+local UICorner1 = Instance.new("UICorner")
+UICorner1.Name = "UICorner"
+UICorner1.CornerRadius = UDim.new(0, 3)
+UICorner1.Parent = TextBoxKeybind
+
+local Ehints = Instance.new("TextLabel")
+Ehints.Name = "ehints"
+Ehints.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+Ehints.Text = "Enable \"infos\" :"
+Ehints.TextColor3 = Color3.fromRGB(0, 0, 0)
+Ehints.TextScaled = true
+Ehints.TextSize = 14
+Ehints.TextWrapped = true
+Ehints.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Ehints.BackgroundTransparency = 1
+Ehints.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Ehints.BorderSizePixel = 0
+Ehints.Position = UDim2.new(0.0281, 0, 0.254, 0)
+Ehints.Size = UDim2.new(0.517, 0, 0.0892, 0)
+
+Ehints.Parent = Settings
+
+
+local Enablehints = Instance.new("TextButton")
+Enablehints.Name = "Enablehints"
+Enablehints.FontFace = Font.new(
+	"rbxasset://fonts/families/SourceSansPro.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Italic
+)
+Enablehints.Text = "On"
+Enablehints.TextColor3 = Color3.fromRGB(0, 0, 0)
+Enablehints.TextScaled = true
+Enablehints.TextSize = 14
+Enablehints.TextWrapped = true
+Enablehints.BackgroundColor3 = Color3.fromRGB(3, 166, 0)
+Enablehints.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Enablehints.BorderSizePixel = 0
+Enablehints.Position = UDim2.new(0.588, 0, 0.254, 0)
+Enablehints.Size = UDim2.new(0.185, 0, 0.0892, 0)
+
+Enablehints.Parent = Settings
+
+local Cmdlist = Instance.new("TextLabel")
+Cmdlist.Name = "cmdlist"
+Cmdlist.FontFace = Font.new(
+	"rbxasset://fonts/families/GothamSSm.json",
+	Enum.FontWeight.Bold,
+	Enum.FontStyle.Normal
+)
+Cmdlist.Text = "esp, chatlogs, [playername], fiddleids, fiddlecrates, filldnlocal, VoteHelp"
+Cmdlist.TextColor3 = Color3.fromRGB(0, 0, 0)
+Cmdlist.TextScaled = true
+Cmdlist.TextSize = 14
+Cmdlist.TextWrapped = true
+Cmdlist.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Cmdlist.BackgroundTransparency = 1
+Cmdlist.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Cmdlist.BorderSizePixel = 0
+Cmdlist.Position = UDim2.new(0.24, 0, 0.561, 0)
+Cmdlist.Size = UDim2.new(0.517, 0, 0.129, 0)
+
+Cmdlist.Parent = Settings
+
+----- Credits
+local Credit = Instance.new("TextLabel")
+Credit.Name = "credit"
+Credit.FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json")
+Credit.Text = "@meowtalgear"
+Credit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Credit.TextSize = 14
+Credit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credit.BackgroundTransparency = 1
+Credit.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Credit.BorderSizePixel = 0
+Credit.Position = UDim2.new(0.289, 0, 0.933, 0)
+Credit.Size = UDim2.new(0, 200, 0, 18)
+-----
+
+Credit.Parent = Global
+TextBoxKeybind.Parent = Settings
+Settings.Parent = Global
+Global.Parent = UI
+
+-------------------- SCRIPTING //////// VARIABLES 
+
+local Players = game:GetService("Players");
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UserInputService = game:GetService("UserInputService")
+local GameFolder = ReplicatedStorage.Game
+local Client = Players.LocalPlayer;
+local ClientGUI = Client.PlayerGui
+
+local KiraList, TakaList = {}, {}
+local Gamemode, Timer, GamePhase = GameFolder.Gamemode, GameFolder.Timer, GameFolder.GamePhase
+local Map = workspace.Map or workspace:WaitForChild("Map")
+
+local CanBypass = true
+
+
+
+local Clip, Noclip = nil, nil
+local Connections = {}
+
+local Keybind, Debounce = nil, false
+local Lender = false
+local EspDebounce = false
+local EspDebounce2 = false
+local fuckthisshit = false
+
+
+-- funcs
+
+local function FetchCurrentId(Map, SpecifiedClient)
+	for _, v in Map:GetChildren() do
+		if v.Name == "Id" then
+			if (v.SurfaceGui.Frame.PlayerName.Text == SpecifiedClient.Name or v.SurfaceGui.Frame.PlayerName.Text == SpecifiedClient.DisplayName) and v.SurfaceGui.Enabled == true then
+				return v
+			end
+		end
+	end
+end
+
+local function closestPlayerAtPos(Position)
+	local MaxRange = math.huge;
+	local Closest = nil;
+
+	for _, v in Players:GetPlayers() do
+		local RootPart = v.Character and v.Character:FindFirstChild("HumanoidRootPart");
+		if not RootPart then
+			continue;
+		end;
+
+		local Magnitude = (RootPart.Position - Position).Magnitude;
+		if Magnitude < MaxRange then
+			Closest = v.Character;
+			MaxRange = Magnitude;
+		end;
+	end;
+
+	return Closest;
+end;
+
+
+local function noclip()
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide then
+					v.CanCollide = false
+				end
+			end
+		end
+		wait(0.4)
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+
+local function clip()
+	if Noclip then
+		Noclip:Disconnect()
+		Noclip = nil
+	end
+	Clip = true
+end
+
+
+local function FodderClipManagement(Bool, DelayTime)  -- false == clip and true == noclip
+	for i, v in pairs(Client.Character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			v.CanCollide = not Bool
+		end
+	end
+
+	if DelayTime then
+		task.delay(DelayTime, function()
+			FodderClipManagement(not Bool)
+		end)
+	end
+end
+
+local function ResetText()
+	KirasDN.Text = ""
+	HasPickedID.Text = ""
+	MisasGameNames.Text = ""
+	GoodSide.Text = ""
+end
+
+
+local function UpdateText(TextLabel, plr)
+	if #(TextLabel.Text) == 0 then
+		TextLabel.Text = plr.DisplayName .. " (" .. plr.Name .. ")"
+	else
+		TextLabel.Text = TextLabel.Text .. ", " .. plr.DisplayName .. " (" .. plr.Name .. ")"
+	end
+end
+
+local function CleanUpConnection()
+	for _, con:RBXScriptConnection in pairs(Connections) do
+		con:Disconnect()
+	end
+end
+
+
+local function MakeDelayedTextAppear(TextLabel, Text, Delaytime)
+	local StoredText = TextLabel.Text
+	TextLabel.Text = Text
+	task.wait(Delaytime)
+	TextLabel.Text = StoredText
+end
+
+
+
+local function CheckForDnOnEachCurrentPlayer()
+	for _, plr in pairs(Players:GetPlayers()) do
+		if (plr.Character) then
+			local co1 = plr.Character.ChildAdded:Connect(function(child)
+				if child.Name == "DeathNoteBook" then
+					if not table.find(KiraList, plr) then
+						table.insert(KiraList, plr)
+						UpdateText(KirasDN, plr)
+					end
+				end
+			end)
+			table.insert(Connections, co1)
+		end
+	end
+end
+
+
+local function CheckForIdsTaken(CMap)
+	for _, v in CMap:GetChildren() do
+		if v.Name == "Id" then
+			local Position = v.Position;
+
+			local SurfaceGui = v:FindFirstChild("SurfaceGui");
+			if not SurfaceGui then
+				continue;
+			end;
+
+			local co2 = SurfaceGui:GetPropertyChangedSignal("Enabled"):Connect(function()
+				local Kira = closestPlayerAtPos(Position);
+				if Kira and Timer.Value < 178.5 and GamePhase.Value == "IdScatter" then
+					local KiraPlr = Players:GetPlayerFromCharacter(Kira)
+					if not table.find(TakaList, KiraPlr) then
+						table.insert(TakaList, KiraPlr)
+						UpdateText(HasPickedID, KiraPlr)
+					end
+				end;
+			end);
+
+			table.insert(Connections, co2)
+		end;
+	end;
+end
+
+
+local function TurnMisaListToString(List)
+
+	local str:string = ""
+	for k, v in pairs(List) do
+		if #str == 0 then
+			str = str .. v .. " (" .. k .. ")"
+		else
+			str = str .. ", " .. v .. " (" .. k .. ")"
+		end
+	end
+
+	return str
+end
+
+
+
+local function GetMisaNames()
+	local MNameAndUsernameList = {}
+
+	for _, name:StringValue in pairs(GameFolder.FolderForNames:GetChildren()) do
+		if name.Value ~= nil then
+			MNameAndUsernameList[tostring(name.Value)] = name.Name
+		end
+	end
+
+	return TurnMisaListToString(MNameAndUsernameList)
+end
+
+
+
+local function MatchNameToPlayer(name)
+	for _, plr in pairs(Players:GetPlayers()) do
+		if plr.Name == name or plr.DisplayName == name then
+			return plr
+		end
+	end
+end
+
+
+
+local function GetPersonWithMostVotesAlgorithm()
+	local maxvalue, mostvoteplr = 0, nil
+	if GameFolder:FindFirstChild("VoteoutFolder") then
+		for _, plrvotes in pairs(GameFolder.VoteoutFolder:GetChildren()) do
+			if plrvotes.Value > maxvalue then
+				maxvalue = plrvotes.Value
+				mostvoteplr = plrvotes.Name
+			end
+		end
+
+		return MatchNameToPlayer(mostvoteplr), maxvalue
+	end
+end
+
+
+local function GlobalClip()
+	if Noclip ~= nil or Clip == false then
+		clip()
+	else
+		noclip()
+	end
+end
+
+
+local function TryAndFetchL()
+	local HighestLChance, Goodlist = 0, {}
+	for _, plr in pairs(Players:GetPlayers()) do
+		local Lchance = plr["LChance_Weight"].Value
+		if not table.find(KiraList, plr) and not table.find(TakaList, plr) then
+			if Lchance > HighestLChance then
+				Goodlist = {}
+				table.insert(Goodlist, plr)
+				HighestLChance = Lchance
+			elseif Lchance == HighestLChance then
+				table.insert(Goodlist, plr)
+			end
+		end
+	end
+	
+	return Goodlist
+end
+
+
+
+local function KeepSearchingForL()
+	while Lender == false do
+		task.wait(3)
+		GoodSide.Text = ""
+		local glist = TryAndFetchL()
+		for _, item in pairs(glist) do
+			UpdateText(GoodSide, item)
+		end
+	end
+end
+
+local function MakeESP(Name)
+	local Esp = Instance.new("BillboardGui")
+	Esp.Name = "Esp"
+	Esp.Active = true
+	Esp.AlwaysOnTop = true
+	Esp.ClipsDescendants = true
+	Esp.LightInfluence = 1
+	Esp.Size = UDim2.new(0.5, 100, 0, 50)
+	Esp.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	local TextLabeltemp = Instance.new("TextLabel")
+	TextLabeltemp.Name = "TextLabel"
+	TextLabeltemp.FontFace = Font.new("rbxasset://fonts/families/PressStart2P.json")
+	TextLabeltemp.TextColor3 = Color3.fromRGB(27, 27, 27)
+	TextLabeltemp.TextScaled = true
+	TextLabeltemp.TextSize = 14
+	TextLabeltemp.TextWrapped = true
+	TextLabeltemp.Text = Name
+	TextLabeltemp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabeltemp.BackgroundTransparency = 1
+	TextLabeltemp.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabeltemp.BorderSizePixel = 0
+	TextLabeltemp.Size = UDim2.new(1, 0, 1, 0)
+
+	local UIStroke = Instance.new("UIStroke")
+	UIStroke.Name = "UIStroke"
+	UIStroke.Color = Color3.fromRGB(255, 0, 0)
+	UIStroke.Parent = TextLabeltemp
+	
+	
+
+	TextLabeltemp.Parent = Esp
+	
+	return Esp
+end
+
+local esptable = {}
+
+function EspActor(DB)
+	local map = workspace.Map
+	
+	if DB == true and map ~= nil then
+		print("called")
+		for _, v in map:GetChildren() do
+			if v.Name == "Id" and v.SurfaceGui.Enabled == true then
+				local espagent = MakeESP(v.SurfaceGui.Frame.PlayerName.Text)
+				local highlight = Instance.new("Highlight")
+				highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+				
+				highlight.Parent = v
+				espagent.Parent = v
+				table.insert(esptable, espagent)
+				table.insert(esptable, highlight)
+			end
+		end
+	elseif DB == false and map ~= nil then
+		for _, item in pairs(esptable) do
+			item:Destroy()
+			table.remove(esptable, table.find(esptable, item))
+		end
+		for _, v in map:GetChildren() do
+			if v.Name == "Id" and v:FindFirstChild("Esp") then
+				v["Esp"]:Destroy()
+			end
+		end
+	elseif map == nil then
+		DB = false
+	end
+end
+
+
+local function FillDNLocally()
+	for _, plr in pairs(Players:GetPlayers()) do
+		local nid = Instance.new("ObjectValue")
+		nid.Name = plr.Name
+		nid.Value = plr
+		nid.Parent = GameFolder.FolderForIds
+	end
+end
+
+
+local function FiddleWIthPrompts()
+	for _, v in workspace.Map:GetChildren() do
+		if v.Name == "Id" then
+			v.IdPrompt.HoldDuration = 0
+			v.IdPrompt.MaxActivationDistance = 100000
+			v.IdPrompt.RequiresLineOfSight = false
+		end
+	end
+end
+
+
+local function fiddlewithprompts2()
+	for _, v in workspace.Map:GetChildren() do
+		if v.Name == "Crate" then
+			v.BinPrompt.HoldDuration = 0
+			v.BinPrompt.MaxActivationDistance = 100000
+			v.BinPrompt.RequiresLineOfSight = false
+		end
+	end
+end
+
+
+local function FillStashList()
+	local StashList = {}
+	for _, v in workspace.Map:GetChildren() do
+		if v.Name == "Crate" then
+			table.insert(StashList, v)
+		end
+	end
+	
+	return StashList
+end
+
+
+local function AutoSearch(StashList)
+	if workspace.Map ~= nil and GamePhase.Value == "Search" then
+		fiddlewithprompts2()
+		for _, crate in pairs(StashList) do
+			Client.Character.HumanoidRootPart.CFrame = crate.CFrame * CFrame.new(Vector3.new(0,1,0))
+			keypress(0x45)
+			task.wait(0.2)
+			keyrelease(0x45)
+			
+			if GamePhase.Value ~= "Search" then
+				break
+			end
+				
+		end
+	end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+GamePhase:GetPropertyChangedSignal("Value"):Connect(function()
+	if GamePhase.Value == "Starting" and CanBypass == false then
+
+		CleanUpConnection()
+		Lender = true
+		KiraList, TakaList = {}, {}
+		task.delay(41, function()
+			CanBypass = true
+			Lender = false
+			EspDebounce = false
+		end)
+
+
+	elseif GamePhase.Value == "Intermission" then
+		ResetText()
+	end
+end)
+
+
+Client.CharacterAdded:Connect(function()
+	CleanUpConnection()
+	KiraList, TakaList = {}, {}
+	CanBypass = true
+	Lender = true
+end)
+
+
+
+Clear.MouseButton1Click:Connect(function()
+	KiraList, TakaList = {}, {}
+	ResetText()
+end)
+
+
+NoclipButton.MouseButton1Click:Connect(function()
+	GlobalClip()
+end)
+
+
+
+TPTOYOURID.MouseButton1Click:Connect(function()
+
+	local CurrentUserId = FetchCurrentId(workspace.Map, Client)
+
+	if CurrentUserId ~= nil and (Client.Character) then
+		FodderClipManagement(true, 2)
+		Client.Character.HumanoidRootPart.CFrame = CurrentUserId.CFrame * CFrame.new(Vector3.new(0,1,0))
+	else
+		MakeDelayedTextAppear(TPTOYOURID, "Your Id is either taken or not in game. :P", 2)
+	end
+end)
+
+
+MisasGamePrompt.MouseButton1Click:Connect(function()
+	if Gamemode.Value == "MisaGame" then
+		if GameFolder:FindFirstChild("FolderForNames") then
+			MisasGameNames.Text = GetMisaNames()
+		else
+			MakeDelayedTextAppear(MisasGameNames, "Names aren't instanced yet, retry after the voting round.", 6)
+		end
+	else
+		MakeDelayedTextAppear(MisasGameNames, "Gamemode isn't misa's game.", 5)
+	end
+end)
+
+
+
+TPTOSOMEONESID.FocusLost:Connect(function(enterpressed, input)
+	if enterpressed then
+		local name = TPTOSOMEONESID.Text
+		local MatchedPlayer = MatchNameToPlayer(name)
+
+		if MatchedPlayer then
+			local TheirId = FetchCurrentId(workspace.Map, MatchedPlayer)
+
+			if TheirId ~= nil and (Client.Character) then
+				FodderClipManagement(true, 1)
+				Client.Character.HumanoidRootPart.CFrame = TheirId.CFrame
+			else
+				MakeDelayedTextAppear(TPTOYOURID, "ID taken or not in game, name is caps sensitive", 2)
+			end
+
+		end
+
+		if name == "VoteHelp" then
+			local PlrMostVotes, Votes = GetPersonWithMostVotesAlgorithm()
+			if PlrMostVotes ~= nil then
+				game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "MOSTVOTEDPLAYER",["Text"] = "Most Voted player is " .. PlrMostVotes.DisplayName .. " with " .. Votes .. " votes.",["Duration"] = 3,["Button1"] = "Ok. Thanks."})
+			else
+				game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "Not in voting round/ No most voted player.",["Text"] = "",["Duration"] = 4,["Button1"] = "OMG SAD !!!"})
+			end
+		elseif name == "chatlogs" then
+			loadstring(game:HttpGet("https://pastebin.com/raw/stggPUBM", true))()
+		elseif name == "esp" then
+			EspDebounce = not EspDebounce
+			EspActor(EspDebounce)
+		elseif name == "filldnlocal" then
+			FillDNLocally()
+		elseif name == "fiddleids" then
+			FiddleWIthPrompts()
+		elseif name == "fiddlecrates" then
+			fiddlewithprompts2()
+		end
+
+	end
+end)
+
+
+
+TPtorandomsearchlocation.MouseButton1Click:Connect(function()
+	if GamePhase.Value == "Search" then
+		AutoSearch(FillStashList())
+	else
+		game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "Not in searching phase. Bohoo",["Text"] = "",["Duration"] = 4,["Button1"] = "OMG SAD !!!"})
+	end
+end)
+
+
+SettingsButtonSelect.MouseButton1Click:Connect(function()
+	Settings.Visible = true
+	Main.Visible = false
+end)
+
+MainButtonSelect.MouseButton1Click:Connect(function()
+	Main.Visible = true
+	Settings.Visible = false
+end)
+
+
+KirasDN.MouseEnter:Connect(function()
+	if fuckthisshit == false then
+		KiraDesc.Visible = true
+	end
+end)
+KirasDN.MouseLeave:Connect(function()
+	KiraDesc.Visible = false
+end)
+
+GoodSide.MouseEnter:Connect(function()
+	if fuckthisshit == false then
+		LDesc.Visible = true
+	end
+end)
+GoodSide.MouseLeave:Connect(function()
+	LDesc.Visible = false
+end)
+
+HasPickedID.MouseEnter:Connect(function()
+	if fuckthisshit == false then
+		PickedIdsDesc.Visible = true
+	end
+end)
+HasPickedID.MouseLeave:Connect(function()
+	PickedIdsDesc.Visible = false
+end)
+
+
+Settings.Enablehints.MouseButton1Click:Connect(function()
+	if fuckthisshit == false then
+		Enablehints.Text = "Off"
+		Enablehints.BackgroundColor3 = Color3.fromRGB(166,0,0)
+		fuckthisshit = true
+	else
+		Enablehints.Text = "On"
+		Enablehints.BackgroundColor3 = Color3.fromRGB(3,166,0)
+		fuckthisshit = false
+	end
+end)
+
+
+TextBoxKeybind.FocusLost:Connect(function(enterpressed, input)
+	if enterpressed then
+		local Text = TextBoxKeybind.Text
+		if #Text == 1 then
+			Keybind = Text:upper()
+		elseif Text:lower() == "delete" then
+			UI:Destroy()
+			script:Destroy()
+		else
+			MakeDelayedTextAppear(TextBoxKeybind, "No.", 1)
+		end
+	end
+end)
+
+
+UserInputService.InputBegan:Connect(function(input, gameproc)
+	if (not gameproc) and Keybind ~= nil then
+		if string.len(Keybind) > 0 then
+			if Enum.KeyCode[Keybind] and input.KeyCode == Enum.KeyCode[Keybind] then
+				Global.Visible = Debounce
+				Debounce = not Debounce
+			end
+		end
+	end
+end)
+
+
+
+Start.MouseButton1Click:Connect(function()
+	if workspace:FindFirstChild("Map") and CanBypass == true then
+		Map = workspace.Map
+		CheckForIdsTaken(Map)
+		CheckForDnOnEachCurrentPlayer()
+		KeepSearchingForL()
+	end
+end)
+
+
+
+
+
+UI.Parent = game.Players.LocalPlayer.PlayerGui
+game:GetService("StarterGui"):SetCore("SendNotification",{["Title"] = "SCRIPTLOADED",["Text"] = "Check all commands in settings tab. Press Start to start the kira detection (only when you're in game)",["Duration"] = 10,["Button1"] = "thank you my goat"})
+
+---888888888888888888888888888888888888888888888888888
+
