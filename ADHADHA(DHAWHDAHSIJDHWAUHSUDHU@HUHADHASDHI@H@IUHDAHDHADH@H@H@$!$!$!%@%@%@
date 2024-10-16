@@ -1298,9 +1298,9 @@ local function AutoSearch(StashList)
 		fiddlewithprompts2()
 		for _, crate in pairs(StashList) do
 			Client.Character.HumanoidRootPart.CFrame = crate.CFrame * CFrame.new(Vector3.new(0,1,0))
-			keypress(0x45)
+			keypress(1x1)
 			task.wait(1)
-			keyrelease(0x45)
+			keyrelease(1x1)
 			
 			if GamePhase.Value ~= "Search" then
 				break
