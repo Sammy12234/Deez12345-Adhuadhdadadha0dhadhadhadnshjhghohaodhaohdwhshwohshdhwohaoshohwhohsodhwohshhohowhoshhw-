@@ -1299,8 +1299,16 @@ local function AutoSearch(StashList)
         -- Function to handle prompt interaction
         fiddlewithprompts2()
 
+        -- Table to track crates that have already been searched
+        local searchedCrates = {}
+
         -- Loop through each crate in the StashList
         for _, crate in pairs(StashList) do
+            -- Skip the crate if it has already been searched
+            if searchedCrates[crate] then
+                continue
+            end
+
             -- First, walk to the crate location for 1 second
             local targetPosition = crate.CFrame.Position + Vector3.new(0, 1, 0)
             Client.Character.HumanoidRootPart.CFrame = CFrame.new(targetPosition)
@@ -1313,6 +1321,9 @@ local function AutoSearch(StashList)
             keypress(0x45)
             task.wait(0.4)  -- Wait for 0.4 seconds to simulate the interaction
             keyrelease(0x45)
+
+            -- Mark this crate as searched
+            searchedCrates[crate] = true
 
             -- Check if the game phase has changed to something other than "Search"
             -- If so, break the loop early to prevent further actions
@@ -1327,7 +1338,6 @@ local function AutoSearch(StashList)
         end
     end
 end
-
 
 
 
