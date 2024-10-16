@@ -1299,7 +1299,7 @@ local function AutoSearch(StashList)
 		for _, crate in pairs(StashList) do
 			Client.Character.HumanoidRootPart.CFrame = crate.CFrame * CFrame.new(Vector3.new(0,1,0))
 			keypress(0x45)
-			task.wait(0.2)
+			task.wait(3)
 			keyrelease(0x45)
 			
 			if GamePhase.Value ~= "Search" then
