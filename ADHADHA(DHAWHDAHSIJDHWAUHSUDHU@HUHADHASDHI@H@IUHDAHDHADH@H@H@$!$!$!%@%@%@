@@ -1169,7 +1169,7 @@ end
 
 local function KeepSearchingForL()
 	while Lender == false do
-		task.wait(3)
+		task.wait(0.4)
 		GoodSide.Text = ""
 		local glist = TryAndFetchL()
 		for _, item in pairs(glist) do
@@ -1294,21 +1294,38 @@ end
 
 
 local function AutoSearch(StashList)
-	if workspace.Map ~= nil and GamePhase.Value == "Search" then
-		fiddlewithprompts2()
-		for _, crate in pairs(StashList) do
-			Client.Character.HumanoidRootPart.CFrame = crate.CFrame * CFrame.new(Vector3.new(0,1,0))
-			keypress(0x45)
-			task.wait(0.4)
-			keyrelease(0x45)
-			
-			if GamePhase.Value ~= "Search" then
-				break
-			end
-				
-		end
-	end
+    -- Check if the map exists and the game phase is "Search"
+    if workspace.Map ~= nil and GamePhase.Value == "Search" then
+        -- Function to handle prompt interaction
+        fiddlewithprompts2()
 
+        -- Loop through each crate in the StashList
+        for _, crate in pairs(StashList) do
+            -- First, walk to the crate location for 1 second
+            local targetPosition = crate.CFrame.Position + Vector3.new(0, 1, 0)
+            Client.Character.HumanoidRootPart.CFrame = CFrame.new(targetPosition)
+
+            -- Simulate walking for 1 second (wait for 1 second while moving)
+            task.wait(1)
+
+            -- After walking, interact with the crate (searching behavior)
+            Client.Character.HumanoidRootPart.CFrame = crate.CFrame * CFrame.new(Vector3.new(0, 1, 0))
+            keypress(0x45)
+            task.wait(0.4)  -- Wait for 0.4 seconds to simulate the interaction
+            keyrelease(0x45)
+
+            -- Check if the game phase has changed to something other than "Search"
+            -- If so, break the loop early to prevent further actions
+            if GamePhase.Value ~= "Search" then
+                break
+            end
+
+            -- After interacting with the crate, walk away from it for 1 second
+            local awayPosition = crate.CFrame.Position + Vector3.new(1, 0, 0)  -- Move 1 unit away from the crate
+            Client.Character.HumanoidRootPart.CFrame = CFrame.new(awayPosition)
+            task.wait(1)  -- Walk away for 1 second
+        end
+    end
 end
 
 
