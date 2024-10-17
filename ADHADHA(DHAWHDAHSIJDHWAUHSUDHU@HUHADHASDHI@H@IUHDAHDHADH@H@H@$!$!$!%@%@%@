@@ -1294,36 +1294,40 @@ end
 
 
 local function AutoSearch(StashList)
-    -- Check if the map exists and the game phase is "Search"
+    -- Ensure the map exists and the game phase is "Search"
     if workspace.Map ~= nil and GamePhase.Value == "Search" then
-        -- Function to handle prompt interaction
+        -- Handle prompt interaction (assuming `fiddlewithprompts2()` works in Solara V3)
         fiddlewithprompts2()
 
         -- Table to track crates that have already been searched
         local searchedCrates = {}
 
-        -- Loop through each crate in the StashList
+        -- Loop through each crate in StashList
         for _, crate in pairs(StashList) do
+            -- Use a unique identifier for each crate (crate:GetFullName() or crate.CFrame)
+            local crateId = crate:GetFullName()  -- Use the full name as a unique identifier
+
             -- Skip the crate if it has already been searched
-            if searchedCrates[crate] then
+            if searchedCrates[crateId] then
                 continue
             end
 
-            -- First, walk to the crate location for 1 second
+            -- Walk to the crate location for 0.5 seconds
             local targetPosition = crate.CFrame.Position + Vector3.new(0, 1, 0)
             Client.Character.HumanoidRootPart.CFrame = CFrame.new(targetPosition)
+            task.wait(0.5)  -- Adjusted walking time to 0.5 seconds
 
-            -- Simulate walking for 1 second (wait for 1 second while moving)
-            task.wait(1)
-
-            -- After walking, interact with the crate (searching behavior)
+            -- Interact with the crate
             Client.Character.HumanoidRootPart.CFrame = crate.CFrame * CFrame.new(Vector3.new(0, 1, 0))
+
+            -- If Solara V3 uses custom keybindings, adjust this interaction as needed
+            -- Assuming the key for "E" is 0x45, we simulate pressing and releasing "E"
             keypress(0x45)
-            task.wait(0.4)  -- Wait for 0.4 seconds to simulate the interaction
+            task.wait(0.5)  -- Adjusted interaction time to 0.5 seconds
             keyrelease(0x45)
 
-            -- Mark this crate as searched
-            searchedCrates[crate] = true
+            -- Mark this crate as searched by storing its unique identifier
+            searchedCrates[crateId] = true
 
             -- Check if the game phase has changed to something other than "Search"
             -- If so, break the loop early to prevent further actions
@@ -1331,21 +1335,13 @@ local function AutoSearch(StashList)
                 break
             end
 
-            -- After interacting with the crate, walk away from it for 1 second
+            -- After interacting with the crate, walk away for 0.5 seconds
             local awayPosition = crate.CFrame.Position + Vector3.new(1, 0, 0)  -- Move 1 unit away from the crate
             Client.Character.HumanoidRootPart.CFrame = CFrame.new(awayPosition)
-            task.wait(1)  -- Walk away for 1 second
+            task.wait(0.5)  -- Adjusted walking time to 0.5 seconds
         end
     end
 end
-
-
-
-
-
-
-
-
 
 
 GamePhase:GetPropertyChangedSignal("Value"):Connect(function()
