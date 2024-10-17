@@ -1293,18 +1293,18 @@ local function FillStashList()
 end
 
 
-ocal function AutoSearch(StashList)
-    -- Check if the map exists and the game phase is "Search"
+local function AutoSearch(StashList)
+    -- Ensure the map exists and the game phase is "Search"
     if workspace.Map ~= nil and GamePhase.Value == "Search" then
-        -- Function to handle prompt interaction
+        -- Handle prompt interaction (assuming `fiddlewithprompts2()` works in Solara V3)
         fiddlewithprompts2()
 
         -- Table to track crates that have already been searched
         local searchedCrates = {}
 
-        -- Loop through each crate in the StashList
+        -- Loop through each crate in StashList
         for _, crate in pairs(StashList) do
-            -- Create a unique identifier for each crate (could use its full name or position)
+            -- Use a unique identifier for each crate (crate:GetFullName() or crate.CFrame)
             local crateId = crate:GetFullName()  -- Use the full name as a unique identifier
 
             -- Skip the crate if it has already been searched
@@ -1312,17 +1312,18 @@ ocal function AutoSearch(StashList)
                 continue
             end
 
-            -- First, walk to the crate location for 0.5 seconds
+            -- Walk to the crate location for 0.5 seconds
             local targetPosition = crate.CFrame.Position + Vector3.new(0, 1, 0)
             Client.Character.HumanoidRootPart.CFrame = CFrame.new(targetPosition)
+            task.wait(0.5)  -- Adjusted walking time to 0.5 seconds
 
-            -- Simulate walking for 0.5 seconds (wait for 0.5 seconds while moving)
-            task.wait(0.5)
-
-            -- After walking, interact with the crate (searching behavior)
+            -- Interact with the crate
             Client.Character.HumanoidRootPart.CFrame = crate.CFrame * CFrame.new(Vector3.new(0, 1, 0))
+
+            -- If Solara V3 uses custom keybindings, adjust this interaction as needed
+            -- Assuming the key for "E" is 0x45, we simulate pressing and releasing "E"
             keypress(0x45)
-            task.wait(0.5)  -- Wait for 0.5 seconds to simulate the interaction
+            task.wait(0.5)  -- Adjusted interaction time to 0.5 seconds
             keyrelease(0x45)
 
             -- Mark this crate as searched by storing its unique identifier
@@ -1334,20 +1335,13 @@ ocal function AutoSearch(StashList)
                 break
             end
 
-            -- After interacting with the crate, walk away from it for 0.5 seconds
+            -- After interacting with the crate, walk away for 0.5 seconds
             local awayPosition = crate.CFrame.Position + Vector3.new(1, 0, 0)  -- Move 1 unit away from the crate
             Client.Character.HumanoidRootPart.CFrame = CFrame.new(awayPosition)
-            task.wait(0.5)  -- Walk away for 0.5 seconds
+            task.wait(0.5)  -- Adjusted walking time to 0.5 seconds
         end
     end
 end
-
-
-
-
-
-
-
 
 
 
